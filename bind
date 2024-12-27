@@ -4,5 +4,4 @@ FROM ubuntu
 RUN apt update && apt install -y bind9 && apt install -y vim
 
 #namedを実行し、恒久化
-CMD ["/usr/sbin/named"]
-CMD ["tail","-f"]
+CMD ["/bin/bash", "-c", "/usr/sbin/named && tail -f "]
