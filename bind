@@ -2,6 +2,7 @@ FROM ubuntu
 
 # 必要なパッケージをインストール
 RUN apt update && apt install -y bind9 && apt install -y vim
+COPY /setting/db.local /etc/bind/db.local
 
 #namedを実行し、恒久化
 CMD ["/bin/bash", "-c", "/usr/sbin/named && tail -f "]
